@@ -5,15 +5,37 @@ using UnityEngine;
 public class Turret_Behavior : MonoBehaviour {
 
     private GameObject target;
+    public float time;
+    public bool mayFire;
+    public GameObject projectile;
+    public bool active;
+    public GameObject lauchPoint;
 
 	// Use this for initialization
 	void Start () {
         target = GameObject.FindGameObjectWithTag("Player");
+        active = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(target.transform);
-        //clamp rotation between X = 80 and X = 133
+        if (active == true)
+        {
+            transform.LookAt(target.transform);
+            //clamp rotation between X = 80 and X = 133
+
+            if (mayFire == true)
+            {
+                Instantiate(projectile, lauchPoint.transform.position, Quaternion.identity);
+                mayFire = false;
+                StartCoroutine(Reload());
+            }
+        }
 	}
+
+    public IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(time);
+        mayFire = true;
+    }
 }
