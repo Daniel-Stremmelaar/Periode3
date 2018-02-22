@@ -17,4 +17,9 @@ public class Shot_Movement : MonoBehaviour {
 	void Update () {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject, 0.5f);
+    }
 }
