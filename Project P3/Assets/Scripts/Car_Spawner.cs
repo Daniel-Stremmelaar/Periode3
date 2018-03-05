@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Car_Spawner : MonoBehaviour {
+public class Car_Spawner : MonoBehaviour
+{
+    /*
+    
+    for (int i =0; i <  )
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    */
 }
