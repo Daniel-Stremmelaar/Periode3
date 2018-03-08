@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class Car_Spawner : MonoBehaviour
 {
-    /*
-    
-    for (int i =0; i <  )
+    public GameObject car1;
 
-    */
+    private void Update()
+    {
+        
+    }
+    public void Spawner()
+    {
+        //for (int i = 0; i < car1; i++)
+        {
+
+        }
+    }
+    
+    
 }
