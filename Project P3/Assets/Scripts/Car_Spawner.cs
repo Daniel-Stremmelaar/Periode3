@@ -7,6 +7,10 @@ public class Car_Spawner : MonoBehaviour
     public GameObject car1;
     public bool spawnCheck = true;
 
+    private void Start()
+    {
+        
+    }
     private void Update()
     {
         MaySpawn();
