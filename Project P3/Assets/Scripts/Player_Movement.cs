@@ -37,7 +37,7 @@ public class Player_Movement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.tag == "Terrain")
+        if (c.gameObject.tag == "Terrain" || c.gameObject.tag == "Car1")
         {
             jumpCurrent = 0;
             mayJump = true;
