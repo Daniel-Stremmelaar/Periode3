@@ -6,7 +6,7 @@ public class Car_Spawner : MonoBehaviour
 {
     public GameObject car1;
     public bool spawnCheck = true;
-
+    
     private void Start()
     {
         
@@ -31,7 +31,7 @@ public class Car_Spawner : MonoBehaviour
     }
     IEnumerator SpawnTime()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         spawnCheck = true;
     }
     
