@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car1: {fileID: 1952142570458202, guid: eef2d3b3fe555b5448d8f5ef9c1a91a2, type: 2}
   spawnCheck: 1
+  lifeTime: 15
+  spawn: 3

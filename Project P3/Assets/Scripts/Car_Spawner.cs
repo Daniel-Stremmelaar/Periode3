@@ -6,11 +6,9 @@ public class Car_Spawner : MonoBehaviour
 {
     public GameObject car1;
     public bool spawnCheck = true;
-    
-    private void Start()
-    {
-        
-    }
+    public float lifeTime;
+    public float spawn;
+
     private void Update()
     {
         MaySpawn();
@@ -26,12 +24,12 @@ public class Car_Spawner : MonoBehaviour
     public void Spawner()
     {
         GameObject g = Instantiate(car1, transform.position, transform.rotation);
-        Destroy(g, 15);
+        Destroy(g, lifeTime);
         spawnCheck = false;
     }
     IEnumerator SpawnTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(spawn);
         spawnCheck = true;
     }
     
