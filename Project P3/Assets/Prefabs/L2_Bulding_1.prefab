@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65726299377601324}
   m_Layer: 0
   m_Name: L2_Bulding_1
-  m_TagString: Car1
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
