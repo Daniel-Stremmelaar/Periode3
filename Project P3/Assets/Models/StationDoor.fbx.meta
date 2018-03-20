@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: dacccfe685702964985614d3d5475e2b
-timeCreated: 1521548183
+guid: cfa228f17e3fa0840a88721ac0edb97c
+timeCreated: 1521547185
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Car1Mat
+    2100000: stationDoorMat
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Car1
+    4300000: StationDoor
   externalObjects: {}
   materials:
     importMaterials: 1

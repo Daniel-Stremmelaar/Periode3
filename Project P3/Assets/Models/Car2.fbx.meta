@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: dacccfe685702964985614d3d5475e2b
-timeCreated: 1521548183
+guid: 4c527ca90feeb034d8cf63894e385032
+timeCreated: 1521555794
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Car1Mat
+    2100000: Car2MAT
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Car1
+    4300000: Cube
   externalObjects: {}
   materials:
     importMaterials: 1

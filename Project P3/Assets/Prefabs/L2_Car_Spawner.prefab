@@ -9,49 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1730746174043760}
+  m_RootGameObject: {fileID: 1566549296885484}
   m_IsPrefabParent: 1
---- !u!1 &1730746174043760
+--- !u!1 &1566549296885484
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4778659179842746}
-  - component: {fileID: 114047424142838428}
+  - component: {fileID: 4816481880338580}
+  - component: {fileID: 114156403384076392}
   m_Layer: 0
-  m_Name: Car_Spawner
+  m_Name: L2_Car_Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4778659179842746
+--- !u!4 &4816481880338580
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1730746174043760}
+  m_GameObject: {fileID: 1566549296885484}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 14.88, y: 5.63, z: -5.58}
+  m_LocalPosition: {x: 9.97, y: 4.7, z: -12.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &114047424142838428
+--- !u!114 &114156403384076392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1730746174043760}
+  m_GameObject: {fileID: 1566549296885484}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45427e3839c9334f8ac3c9f1a0676a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car1: {fileID: 1010167971692296, guid: b19b01cbbb36299479f8d38969510dfc, type: 2}
+  car1: {fileID: 0}
   spawnCheck: 1
-  lifeTime: 15
+  lifeTime: 30
   spawn: 3
