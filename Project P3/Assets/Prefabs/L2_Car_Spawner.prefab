@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45427e3839c9334f8ac3c9f1a0676a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car1: {fileID: 0}
+  cars:
+  - {fileID: 1941142792298706, guid: c6add88c1a9c0f44b960c8f021ab4b63, type: 2}
+  - {fileID: 1527026409160184, guid: 7675087bb101ef142b8dfe373058c462, type: 2}
   spawnCheck: 1
   lifeTime: 30
   spawn: 3
