@@ -1,16 +1,24 @@
 fileFormatVersion: 2
-guid: 60a511a7bd51dc14aaf888bbceaee2ff
-timeCreated: 1522156036
+guid: 97aa2f6ad8c93c8468f47005fdff97d3
+timeCreated: 1522156037
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: L5_PilarM
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: L5_Pilar
+    100000: Camera
+    100002: Cube
+    100004: //RootNode
+    100006: Lamp
+    400000: Camera
+    400002: Cube
+    400004: //RootNode
+    400006: Lamp
+    2000000: Camera
+    2100000: Material
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
