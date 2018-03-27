@@ -74365,7 +74365,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985282384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 10, z: -7.47}
+  m_LocalPosition: {x: -2, y: 10, z: -4.47}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74379,13 +74379,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985282384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b621e336d65db4b45b812537012b417e, type: 3}
+  m_Script: {fileID: 11500000, guid: 772b576517c40e44cb2153acac7b2861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sentences:
-  - 
-  - Hallo
-  - 
+  conversation:
+    conversation: []
 --- !u!1001 &1985394519
 Prefab:
   m_ObjectHideFlags: 0
