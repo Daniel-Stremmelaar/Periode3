@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class L2_NPC : MonoBehaviour
+public class L2_NPC : L2_ConversationManager
 {
     public L2_Conversation conversation;
-    public void TriggerConversation()
+    
+    public void OnTriggerEnter(Collider startCon)
     {
-        FindObjectOfType<L2_ConversationManager>().StartConversation(conversation);
+        if(startCon.gameObject.tag == ("Player"))
+        {
+            Debug.Log("trigger werkt");
+            StartConversation(conversation);
+            //GameObject.FindWithTag("Player").GetComponent<Player_Movement>().enabled = false;
+        }
     }
-	
 }

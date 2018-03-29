@@ -62298,7 +62298,7 @@ Prefab:
     - target: {fileID: 114304969571776076, guid: 1ee722be6256e0c4fb8187bab12fadc9,
         type: 2}
       propertyPath: velocity.y
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4690625076885274, guid: 1ee722be6256e0c4fb8187bab12fadc9, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -74295,9 +74295,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1985282388}
   - component: {fileID: 1985282387}
-  - component: {fileID: 1985282386}
   - component: {fileID: 1985282385}
   - component: {fileID: 1985282389}
+  - component: {fileID: 1985282386}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -74339,17 +74339,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &1985282386
-BoxCollider:
+--- !u!136 &1985282386
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985282384}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 4.7
+  m_Height: 0
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1985282387
 MeshFilter:
@@ -74365,7 +74366,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985282384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 10, z: -4.47}
+  m_LocalPosition: {x: -1, y: 10, z: -7.47}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74383,7 +74384,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation:
-    conversation: []
+    conversation:
+    - HE!!
+    - You need to go to the station you can go two ways
+    - Right
+    - Left
+    - Right. Oke you need to drop down and go to the main road.
+    - Left. Oke you need to go up and go to the main road.
 --- !u!1001 &1985394519
 Prefab:
   m_ObjectHideFlags: 0
