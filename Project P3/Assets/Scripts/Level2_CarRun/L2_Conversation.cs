@@ -6,6 +6,6 @@ using UnityEngine;
 public class L2_Conversation 
 {
     [TextArea(2, 5)]
-    public List<string> conversation;
+    public List<string> dialogue;
 
 }

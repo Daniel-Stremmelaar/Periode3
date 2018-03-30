@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class L2_NPC : L2_ConversationManager
 {
-    public L2_Conversation conversation;
-    
+        
     public void OnTriggerEnter(Collider startCon)
     {
         if(startCon.gameObject.tag == ("Player"))

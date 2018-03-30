@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class L2_ConversationManager : MonoBehaviour
 {
-    private List<string> dialogue;
+    public L2_Conversation conversation;
+    private List<string> dialogueHolder;
 
     void Start()
     {
-        dialogue = new List<string>();
+        dialogueHolder = new List<string>();
     }
 
     public void StartConversation(L2_Conversation conversation)
     {
         Debug.Log("StartConverstation");
+    }
+    public void NextSentence()
+    {
+        if (Input.GetButton("1"))
+        {
+            
+        } 
     }
 }
