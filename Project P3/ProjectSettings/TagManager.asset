@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Car
+  - DoorPanel
   layers:
   - Default
   - TransparentFX

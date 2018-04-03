@@ -8,16 +8,20 @@ public class Enemy_Walker : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
     private float currentTime;
-    private bool senseFieldB;
+    [SerializeField]private bool senseFieldB;
+    [SerializeField]private bool hittrue;
     [SerializeField] private float time;
 
     [Header("Charging")]
     [SerializeField] private Transform chargePoint;
 
+    [SerializeField] RaycastHit hit;
+
 
     void Start ()
     {
         senseFieldB = false;
+        hittrue = false;
         currentTime = time;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -25,6 +29,7 @@ public class Enemy_Walker : MonoBehaviour
     void Update()
     {
         ThinkTimer();
+        Attack();
     }
 
     void ThinkTimer()
@@ -50,15 +55,35 @@ public class Enemy_Walker : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !hittrue)
         {
             Sensefield();
         }
     }
 
     void OnTriggerExit(Collider other)
+    {  
+        if (other .gameObject.tag == "Player" && hittrue)
+        {
+            senseFieldB = true;
+        }
+    }
+
+    void Attack()
     {
-        senseFieldB = true;
+        if (Physics.Raycast(transform.position, transform.forward, out hit,20f))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                hittrue = true;
+                agent.SetDestination(player.position);
+            }
+            else
+            {
+                hittrue = false;
+            }
+        }
+        Debug.DrawRay(transform.position, transform.forward * 10, Color.red);
     }
 
 }
