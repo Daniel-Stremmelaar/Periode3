@@ -11,7 +11,7 @@ public class L2_NPC : L2_ConversationManager
         {
             Debug.Log("trigger werkt");
             StartConversation(conversation);
-            //GameObject.FindWithTag("Player").GetComponent<Player_Movement>().enabled = false;
+            GameObject.FindWithTag("Player").GetComponent<Player_Movement>().enabled = false;
         }
     }
 }
