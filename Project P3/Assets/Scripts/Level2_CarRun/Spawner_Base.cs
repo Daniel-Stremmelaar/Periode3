@@ -12,10 +12,14 @@ public class Spawner_Base : MonoBehaviour
 
     void Start()
     {
-        random = Random.Range(0,(cars.Count));
+       
+       
     }
     void Update()
     {
+        
+        random = Random.Range(0, (cars.Count));
+       
         MaySpawn();
     }
     public void MaySpawn()
