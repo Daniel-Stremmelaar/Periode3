@@ -12,7 +12,7 @@ public class InTrain_PlayerInteract : MonoBehaviour
 
     void Start ()
     {
-		
+        
 	}
 
 	void Update ()
@@ -29,6 +29,8 @@ public class InTrain_PlayerInteract : MonoBehaviour
                 if (hit.transform.tag == "DoorPanel")
                 {
                     doorPanel.SetActive(true);
+                    GameObject h = Instantiate(doorPanel, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
+                    h.transform.parent = hit.transform;
                     if (Input.GetButtonDown("E"))
                     {
                         Debug.Log("Door Opens");
@@ -39,12 +41,12 @@ public class InTrain_PlayerInteract : MonoBehaviour
                     doorPanel.SetActive(false);
                 }
             }
-            else
-            {
-                
-            }
         }
-        Debug.DrawRay(transform.position, transform.forward * 20, Color.blue);
+        else
+        {
+            doorPanel.SetActive(false);
+        }
+        Debug.DrawRay(transform.position, transform.forward * 5, Color.blue);
     }
 
 }
