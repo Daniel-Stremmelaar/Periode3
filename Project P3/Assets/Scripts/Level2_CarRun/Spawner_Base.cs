@@ -19,7 +19,10 @@ public class Spawner_Base : MonoBehaviour
     {
         
         random = Random.Range(0, (cars.Count));
-       
+        if (random == 1)
+        {
+            spawn += 2;
+        }
         MaySpawn();
     }
     public void MaySpawn()
