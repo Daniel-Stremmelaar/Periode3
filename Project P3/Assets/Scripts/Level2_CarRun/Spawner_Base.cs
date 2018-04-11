@@ -9,6 +9,8 @@ public class Spawner_Base : MonoBehaviour
     public bool spawnCheck = true;
     public float lifeTime;
     public float spawn;
+    public float carSpawn1;
+    public float carspawn2;
 
     void Start()
     {
@@ -21,7 +23,11 @@ public class Spawner_Base : MonoBehaviour
         random = Random.Range(0, (cars.Count));
         if (random == 1)
         {
-            spawn += 2;
+            spawn = carspawn2;
+        }
+        if (random == 0)
+        {
+            spawn = carSpawn1;
         }
         MaySpawn();
     }
