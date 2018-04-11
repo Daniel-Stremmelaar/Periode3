@@ -7,15 +7,17 @@ public class InTrain_PlayerInteract : MonoBehaviour
 {
     [SerializeField] private RaycastHit hit;
     [SerializeField] private float raycastLength;
-    [SerializeField] GameObject doorPanel;
+    [SerializeField] private GameObject doorPanel;
+    [SerializeField] private bool hitPanel;
+    private Transform panel;
 
 
-    void Start ()
+    void Start()
     {
-        
-	}
+        hitPanel = false;
+    }
 
-	void Update ()
+    void Update()
     {
         Interact();
     }
@@ -29,8 +31,9 @@ public class InTrain_PlayerInteract : MonoBehaviour
                 if (hit.transform.tag == "DoorPanel")
                 {
                     doorPanel.SetActive(true);
-                    GameObject h = Instantiate(doorPanel, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
-                    h.transform.parent = hit.transform;
+                    hitPanel = true;
+                    panel = hit.transform.GetChild(0);
+                    panel.gameObject.SetActive(true);               
                     if (Input.GetButtonDown("E"))
                     {
                         Debug.Log("Door Opens");
@@ -38,15 +41,17 @@ public class InTrain_PlayerInteract : MonoBehaviour
                 }
                 else
                 {
+                    hitPanel = false;
                     doorPanel.SetActive(false);
+                    panel.gameObject.SetActive(true);
                 }
             }
         }
         else
         {
+            //panel.gameObject.SetActive(false);
             doorPanel.SetActive(false);
         }
         Debug.DrawRay(transform.position, transform.forward * 5, Color.blue);
     }
-
 }
