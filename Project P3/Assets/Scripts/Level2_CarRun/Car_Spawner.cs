@@ -13,6 +13,7 @@ public class Car_Spawner : Spawner_Base
     public override void Spawner()
     {
         base.Spawner();
-        Instantiate(cars[car1], transform.position, transform.rotation);
+        GameObject c = Instantiate(cars[car1], transform.position, transform.rotation);
+        Destroy(c, lifeTime);
     }
 }
