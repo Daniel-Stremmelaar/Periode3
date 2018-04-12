@@ -7,10 +7,18 @@ public class L2_ConversationManager : MonoBehaviour
     public L2_Conversation conversation;
     private List<string> dialogueHolder = new List<string>();
 
-    public bool begin = false;
-    public bool nextCenteces = false;
-    public bool left = false;
-    public bool right = false;
+    public bool begin;
+    public bool nextCenteces;
+    public bool left;
+    public bool right;
+
+    void Start()
+    {
+        begin = false;
+        nextCenteces = false;
+        left = true;
+        right = true;
+    }
 
     void Update()
     {
@@ -47,20 +55,28 @@ public class L2_ConversationManager : MonoBehaviour
         }
 
         //Left
-        if (Input.GetKey ("1"))
+        if (left == true)
         {
-            left = true;
-            right = false;
-            Debug.Log(conversation.dialogue[3]);
-            
+            Debug.Log("left");
+            if (Input.GetButtonDown("1"))
+            {
+                right = false;
+                Debug.Log(conversation.dialogue[3]);
+
+            }
         }
+        
         //Right
-        if(Input.GetKey ("2"))
+        if (right == true)
         {
-            right = true;
-            left = false;
-            Debug.Log(conversation.dialogue[4]);
+            Debug.Log("Right");
+            if (Input.GetButtonDown("2"))
+            {
+                left = false;
+                Debug.Log(conversation.dialogue[4]);
+            }
         }
+        
     }
     public void EndConversation()
     {
