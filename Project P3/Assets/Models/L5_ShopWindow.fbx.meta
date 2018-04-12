@@ -1,16 +1,30 @@
 fileFormatVersion: 2
-guid: 581d7b6934e68994f9a257add3c9b479
-timeCreated: 1522156036
+guid: 22ec67b8cc642114e982247331860c8b
+timeCreated: 1523518257
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: L5_ShopWindow
+    100004: L5_ShopWindowShutter
+    100006: L5_ShopWindowWindow
     400000: //RootNode
-    2100000: L5_ShowWindowClosedM
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: L5_ShowWindowClosed
+    400002: L5_ShopWindow
+    400004: L5_ShopWindowShutter
+    400006: L5_ShopWindowWindow
+    2100000: L5_ShopWindowWindowM
+    2100002: L5_ShopWindowShutterM
+    2100004: L5_ShopWindowM
+    2300000: L5_ShopWindow
+    2300002: L5_ShopWindowShutter
+    2300004: L5_ShopWindowWindow
+    3300000: L5_ShopWindow
+    3300002: L5_ShopWindowShutter
+    3300004: L5_ShopWindowWindow
+    4300000: L5_ShopWindowWindow
+    4300002: L5_ShopWindowShutter
+    4300004: L5_ShopWindow
   externalObjects: {}
   materials:
     importMaterials: 1
