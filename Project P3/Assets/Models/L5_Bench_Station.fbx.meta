@@ -1,16 +1,24 @@
 fileFormatVersion: 2
-guid: ddf6422b22ed49f49a6fbde28f3c9d4b
-timeCreated: 1522156037
+guid: 11d71787be31a7b4d892f6ca15e19289
+timeCreated: 1523652308
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: L5_BenchStation
+    100004: L5_BenchStationPoster
     400000: //RootNode
-    2100000: L5_BenchStationM
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: L5_BenchStation
+    400002: L5_BenchStation
+    400004: L5_BenchStationPoster
+    2100000: L5_BenchStationPosterM
+    2100002: L5_BenchStationM
+    2300000: L5_BenchStation
+    2300002: L5_BenchStationPoster
+    3300000: L5_BenchStation
+    3300002: L5_BenchStationPoster
+    4300000: L5_BenchStationPoster
+    4300002: L5_BenchStation
   externalObjects: {}
   materials:
     importMaterials: 1
