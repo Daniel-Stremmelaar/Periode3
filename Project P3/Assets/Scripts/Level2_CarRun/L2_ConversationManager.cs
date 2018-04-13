@@ -5,7 +5,7 @@ using UnityEngine;
 public class L2_ConversationManager : MonoBehaviour
 {
     public L2_Conversation conversation;
-    private List<string> dialogueHolder = new List<string>();
+    public List<string> dialogueHolder = new List<string>();
 
     public bool begin;
     public bool nextCenteces;
@@ -16,8 +16,6 @@ public class L2_ConversationManager : MonoBehaviour
     {
         begin = false;
         nextCenteces = false;
-        left = true;
-        right = true;
     }
 
     void Update()
@@ -47,33 +45,55 @@ public class L2_ConversationManager : MonoBehaviour
         if (nextCenteces == true)
         {
             Debug.Log(conversation.dialogue[1]);
+            nextCenteces = false;
             if (Input.GetButtonDown("Next"))
             {
                 Debug.Log(conversation.dialogue[2]);
-                nextCenteces = false;
+                
             }
         }
 
         //Left
         if (left == true)
         {
-            Debug.Log("left");
-            if (Input.GetButtonDown("1"))
+            if (Input.GetButtonDown("Left"))
             {
                 right = false;
                 Debug.Log(conversation.dialogue[3]);
 
+                if (Input.GetButtonDown("Next"))
+                {
+                    Debug.Log(conversation.dialogue[5]);
+
+                    if (Input.GetButtonDown("Left"))
+                    {
+                        GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 2;
+                        Debug.Log(conversation.dialogue[8]);
+                        EndConversation();
+                    }
+                }
             }
         }
         
         //Right
         if (right == true)
         {
-            Debug.Log("Right");
-            if (Input.GetButtonDown("2"))
+            if (Input.GetButtonDown("Right"))
             {
                 left = false;
                 Debug.Log(conversation.dialogue[4]);
+
+                if (Input.GetButtonDown("Next"))
+                {
+                    Debug.Log(conversation.dialogue[5]);
+
+                    if (Input.GetButtonDown("Right"))
+                    {
+                        GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 1;
+                        Debug.Log(conversation.dialogue[8]);
+                        EndConversation();
+                    }
+                }
             }
         }
         
