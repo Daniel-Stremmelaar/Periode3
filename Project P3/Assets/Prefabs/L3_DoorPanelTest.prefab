@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4091050859090940}
   m_Layer: 0
-  m_Name: DoorPanelTest
+  m_Name: L3_DoorPanelTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
