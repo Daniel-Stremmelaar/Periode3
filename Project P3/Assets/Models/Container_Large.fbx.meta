@@ -1,23 +1,16 @@
 fileFormatVersion: 2
-guid: dd9fac128a76f994591d4094eaff6485
-timeCreated: 1523996838
+guid: 892122b5899b7974cb44fd391ab4614f
+timeCreated: 1524082109
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cube.002
-    100002: //RootNode
-    100004: EnemyBase
-    400000: Cube.002
-    400002: //RootNode
-    400004: EnemyBase
-    2100000: No Name
-    2300000: Cube.002
-    2300002: EnemyBase
-    3300000: Cube.002
-    3300002: EnemyBase
-    4300000: EnemyBase
-    4300002: Cube.002
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Container_Large
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Container_Large.001
   externalObjects: {}
   materials:
     importMaterials: 1
