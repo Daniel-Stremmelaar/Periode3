@@ -28,6 +28,7 @@ public class L2_ConversationManager : MonoBehaviour
             {
                 Debug.Log("tab werkt");
                 nextCenteces = true;
+                begin = false;
             }
         }
         
@@ -45,11 +46,10 @@ public class L2_ConversationManager : MonoBehaviour
         if (nextCenteces == true)
         {
             Debug.Log(conversation.dialogue[1]);
-            nextCenteces = false;
+           
             if (Input.GetButtonDown("Next"))
             {
                 Debug.Log(conversation.dialogue[2]);
-                
             }
         }
 
@@ -68,6 +68,12 @@ public class L2_ConversationManager : MonoBehaviour
                     if (Input.GetButtonDown("Left"))
                     {
                         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 2;
+                        Debug.Log(conversation.dialogue[8]);
+                        EndConversation();
+                    }
+                    if (Input.GetButtonDown("Right"))
+                    {
+                        GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 1;
                         Debug.Log(conversation.dialogue[8]);
                         EndConversation();
                     }
@@ -90,6 +96,12 @@ public class L2_ConversationManager : MonoBehaviour
                     if (Input.GetButtonDown("Right"))
                     {
                         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 1;
+                        Debug.Log(conversation.dialogue[8]);
+                        EndConversation();
+                    }
+                      if (Input.GetButtonDown("Left"))
+                    {
+                        GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 2;
                         Debug.Log(conversation.dialogue[8]);
                         EndConversation();
                     }

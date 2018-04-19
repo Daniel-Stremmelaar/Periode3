@@ -8,20 +8,29 @@ public class Enemy_Walker : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
     private float currentTime;
-    [SerializeField]private bool senseFieldB;
-    [SerializeField]private bool hittrue;
+    [HideInInspector] public bool isDead;
+    [HideInInspector] public bool senseField;
+    [HideInInspector] public bool chasing;
+    private bool attackTimer;
+    private bool hitTrue;
+    [SerializeField] private float attackRateMain;
+    private float attakcRate;
     [SerializeField] private float time;
+    [SerializeField] private Transform raycastPos;
+    [SerializeField] private int damage;
 
     [Header("Charging")]
     [SerializeField] private Transform chargePoint;
 
-    [SerializeField] RaycastHit hit;
+    private RaycastHit look;
+    private RaycastHit attack;
 
 
     void Start ()
     {
-        senseFieldB = false;
-        hittrue = false;
+        attakcRate = attackRateMain;
+        senseField = false;
+        hitTrue = false;
         currentTime = time;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -29,12 +38,14 @@ public class Enemy_Walker : MonoBehaviour
     void Update()
     {
         ThinkTimer();
-        Attack();
+        isChasing();
+        isAttack();
+        isLooking();
     }
 
     void ThinkTimer()
     {
-        if (senseFieldB)
+        if (chasing && !senseField && !isDead)
         {
             currentTime -= Time.deltaTime;
             agent.SetDestination(player.position);
@@ -42,48 +53,58 @@ public class Enemy_Walker : MonoBehaviour
 
         if (currentTime <= 0)
         {
+            chasing = false;
             currentTime = time;
-            senseFieldB = false;
             agent.SetDestination(chargePoint.position);
         }
     }
+    void isLooking()
+    {
+        if (Physics.Raycast(raycastPos.position, raycastPos.forward, out look, 10f))
+        {
+            if (!isDead)
+            {
+                if (look.transform.tag == "Player")
+                {
+                    chasing = true;
+                    isChasing();
+                }
+            }
+        }
+        Debug.DrawRay(raycastPos.position, raycastPos.forward * 10, Color.red);
+    }
 
-    void Sensefield()
+    public void isChasing()
+    {
+        if (chasing)
+        {
+            agent.SetDestination(player.position);
+        }
+    }
+
+
+    public void Sensefield()
     {
         agent.SetDestination(player.position);
     }
 
-    void OnTriggerEnter(Collider other)
+    void isAttack()
     {
-        if (other.gameObject.tag == "Player" && !hittrue)
+        if (Physics.Raycast(raycastPos.position, raycastPos.forward, out attack, 3f))
         {
-            Sensefield();
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {  
-        if (other .gameObject.tag == "Player" && hittrue)
-        {
-            senseFieldB = true;
-        }
-    }
-
-    void Attack()
-    {
-        if (Physics.Raycast(transform.position, transform.forward, out hit,20f))
-        {
-            if (hit.transform.tag == "Player")
+            if (attack.transform.tag == "Player")
             {
-                hittrue = true;
-                agent.SetDestination(player.position);
-            }
-            else
-            {
-                hittrue = false;
+                attakcRate -= Time.deltaTime;
             }
         }
-        Debug.DrawRay(transform.position, transform.forward * 10, Color.red);
+        Debug.DrawRay(raycastPos.position, raycastPos.forward * 3, Color.yellow);
+
+        if (attakcRate <= 0)
+        {
+            attack.transform.GetComponent<Train_Health_Manager>().HurtPlayer(damage);
+            attakcRate = attackRateMain;
+            print(attack.transform.GetComponent<Train_Health_Manager>().CalculateHealth());
+        }
     }
 
 }
