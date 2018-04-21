@@ -39,4 +39,5 @@ public class L2_manager : MonoBehaviour
             SceneManager.LoadScene("Jorrit");
         }
     }
+
 }

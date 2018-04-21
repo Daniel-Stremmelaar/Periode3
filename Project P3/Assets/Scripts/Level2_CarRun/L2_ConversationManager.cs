@@ -16,6 +16,9 @@ public class L2_ConversationManager : MonoBehaviour
     public GameObject choice1Switch;
     public GameObject choice2Switch;
     public GameObject startTextSwitch;
+    public GameObject leftWall;
+    public GameObject rightWall;
+
 
     void Start()
     {
@@ -23,9 +26,6 @@ public class L2_ConversationManager : MonoBehaviour
         choice1Switch.SetActive(false);
         choice2Switch.SetActive(false);
 
-        choice1.onClick.AddListener(NextSentence);
-        choice2.onClick.AddListener(NextSentence);
-        
     }
     void Update()
     {
@@ -37,17 +37,39 @@ public class L2_ConversationManager : MonoBehaviour
         Debug.Log(sentences[0]);
         startTextSwitch.SetActive(true);
         startText.text = sentences[0];
+
         choice1Switch.SetActive(true);
         choice2Switch.SetActive(true);
+
         choice1.GetComponentInChildren<Text>().text = answers[0];
         choice2.GetComponentInChildren<Text>().text = answers[1];
+
+        choice1.onClick.AddListener(Right);
+        choice2.onClick.AddListener(Left);
+    }
+    public void Left()
+    {
+        rightWall.GetComponent<BoxCollider>().isTrigger = false;
+        leftWall.GetComponent<BoxCollider>().isTrigger = true;
+        Debug.Log("rightwall is false");
+        NextSentence();
+    }
+
+    public void Right()
+    {
+        leftWall.GetComponent<BoxCollider>().isTrigger = false;
+        rightWall.GetComponent<BoxCollider>().isTrigger = true;
+        Debug.Log("leftwall is false");
+        NextSentence();
     }
 
     public void NextSentence()
     {
         startText.text = sentences[1];
+
         choice1.GetComponentInChildren<Text>().text = answers[2];
         choice2.GetComponentInChildren<Text>().text = answers[3];
+
         choice1.onClick.AddListener(No);
         choice2.onClick.AddListener(Yes);
     }
@@ -55,18 +77,21 @@ public class L2_ConversationManager : MonoBehaviour
     public void Yes()
     {
         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 2;
+        Debug.Log("dubble");
         FinalSentence();
     }
 
     public void No()
     {
         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 1;
+        Debug.Log("singel");
         FinalSentence();
     }
     
     public void FinalSentence()
     {
         startText.text = sentences[3];
+
         choice2.GetComponentInChildren<Text>().text = answers[4];
         choice1Switch.SetActive(false);
         choice2.onClick.AddListener(EndConversation);
