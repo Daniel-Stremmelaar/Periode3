@@ -1,36 +1,36 @@
 fileFormatVersion: 2
-guid: ee98a6dc826453c4eb375d61269ebc9b
-timeCreated: 1524321786
+guid: 57375c29c1320b44ea16dc5ad825f87e
+timeCreated: 1524310983
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: L5_Stairs
-    100004: L5_StairsRailing
-    100006: L5_StairsRailing.001
-    100008: L5_StairsRailing.002
+    100002: L5_VendingMachineBase
+    100004: L5_VendingMachineBoard
+    100006: L5_VendingMachineRobot
+    100008: Spot
+    100010: Sun
     400000: //RootNode
-    400002: L5_Stairs
-    400004: L5_StairsRailing
-    400006: L5_StairsRailing.001
-    400008: L5_StairsRailing.002
-    2100000: L5_StairsM
-    2100002: L5_StairsRailingM
-    2100004: L5_StairsRailingM.001
-    2100006: L5_StairsRailingM.002
-    2300000: L5_Stairs
-    2300002: L5_StairsRailing
-    2300004: L5_StairsRailing.001
-    2300006: L5_StairsRailing.002
-    3300000: L5_Stairs
-    3300002: L5_StairsRailing
-    3300004: L5_StairsRailing.001
-    3300006: L5_StairsRailing.002
-    4300000: L5_Stairs
-    4300002: L5_StairsRailing
-    4300004: L5_StairsRailing.001
-    4300006: L5_StairsRailing.002
+    400002: L5_VendingMachineBase
+    400004: L5_VendingMachineBoard
+    400006: L5_VendingMachineRobot
+    400008: Spot
+    400010: Sun
+    2100000: L5_VendingMachineBoardM
+    2100002: L5_VendingMachineRobotM
+    2100004: L5_VendingMachineBaseM
+    2300000: L5_VendingMachineBase
+    2300002: L5_VendingMachineBoard
+    2300004: L5_VendingMachineRobot
+    3300000: L5_VendingMachineBase
+    3300002: L5_VendingMachineBoard
+    3300004: L5_VendingMachineRobot
+    4300000: L5_VendingMachineBoard
+    4300002: L5_VendingMachineRobot
+    4300004: L5_VendingMachineBase
+    10800000: Spot
+    10800002: Sun
   externalObjects: {}
   materials:
     importMaterials: 1
