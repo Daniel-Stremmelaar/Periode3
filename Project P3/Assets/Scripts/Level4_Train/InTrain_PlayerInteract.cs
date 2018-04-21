@@ -8,13 +8,23 @@ public class InTrain_PlayerInteract : MonoBehaviour
     [SerializeField] private RaycastHit hit;
     [SerializeField] private float raycastLength;
     [SerializeField] private GameObject doorPanel;
-    [SerializeField] private bool hitPanel;
-    private Transform panel;
+    [SerializeField] private Transform crosshair;
 
+    [SerializeField] private float currentStamina;
+    [SerializeField] private float maxStamina;
+    public Slider staminaSlider;
+    [SerializeField] private float weight;
+    [SerializeField]private bool noPower;
+    private Rigidbody grav;
+
+    private string contact;
+    private string obj;
 
     void Start()
     {
-        hitPanel = false;
+        noPower = false;
+        currentStamina = maxStamina;
+        staminaSlider.value = CalculaterWeight();
     }
 
     void Update()
@@ -22,36 +32,111 @@ public class InTrain_PlayerInteract : MonoBehaviour
         Interact();
     }
 
+
     void Interact()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLength))
         {
-            if (hit.transform.tag != null)
+            grav = hit.transform.gameObject.GetComponent<Rigidbody>();
+            contact = hit.transform.tag;
+            obj = hit.transform.name;
+            switch (contact)
             {
-                if (hit.transform.tag == "DoorPanel")
-                {
-                    doorPanel.SetActive(true);
-                    hitPanel = true;
-                    panel = hit.transform.GetChild(0);
-                    panel.gameObject.SetActive(true);               
-                    if (Input.GetButtonDown("E"))
+                case "Puzzle":
+                    if (obj == "Button1" || obj == "Button2" || obj == "Button3")
                     {
-                        Debug.Log("Door Opens");
+                        doorPanel.SetActive(true);
+                        if (Input.GetButtonDown("E"))
+                        {
+                            hit.transform.gameObject.GetComponent<Button_Train>().Pressed();
+                        }
                     }
-                }
-                else
-                {
-                    hitPanel = false;
+                    else
+                    {
+                        doorPanel.SetActive(false);
+                    }
+                    break;
+                case "PickUp":
+                    if (Input.GetButton("Fire1"))
+                    {
+                        if (!noPower)
+                        {
+                            if (hit.transform.gameObject.GetComponent<Rigidbody>().mass > 100)
+                            {
+                                currentStamina -= Time.deltaTime * grav.mass / weight;
+                                Stamina();
+                                hit.transform.parent = gameObject.transform;
+                                grav.useGravity = false;
+                                grav.isKinematic = true;
+                            }
+                            else
+                            {
+                                hit.transform.parent = gameObject.transform;
+                                grav.useGravity = false;
+                                grav.isKinematic = true;
+                            }
+                        }
+                        else
+                        {
+                            hit.transform.parent = null;
+                            grav.useGravity = true;
+                            grav.isKinematic = false;
+                        }
+                    }
+                    else
+                    {
+                        hit.transform.parent = null;
+                        grav.useGravity = true;
+                        grav.isKinematic = false;
+                    }
+                    break;
+                default:
                     doorPanel.SetActive(false);
-                    panel.gameObject.SetActive(true);
-                }
+                    break;
             }
+            Debug.DrawRay(transform.position, transform.forward * 5, Color.red);
         }
         else
         {
-            //panel.gameObject.SetActive(false);
             doorPanel.SetActive(false);
         }
-        Debug.DrawRay(transform.position, transform.forward * 5, Color.blue);
+        Vector3 aboveGround = new Vector3(0,0,0);
+        RaycastHit cros;
+        if (Physics.Raycast(transform.position,transform.forward, out cros , Mathf.Infinity))
+        {
+            hit.point += aboveGround;
+            crosshair.position = cros.point;
+        }
+        if (currentStamina >= maxStamina)
+        {
+            currentStamina = maxStamina;
+        }
+        else
+        {
+            currentStamina += Time.deltaTime * weight;
+            Stamina();
+        }
+        if (currentStamina > 10)
+        {
+            noPower = false;
+        }
+    }
+
+    public void Stamina()
+    {
+        staminaSlider.value = CalculaterWeight();
+        if (currentStamina <= 0)
+        {
+            noPower = true;
+            currentStamina = 0;
+            hit.transform.parent = null;
+            grav.useGravity = true;
+            grav.isKinematic = false;
+        }
+    }
+
+    private float CalculaterWeight()
+    {
+        return currentStamina / maxStamina;
     }
 }
