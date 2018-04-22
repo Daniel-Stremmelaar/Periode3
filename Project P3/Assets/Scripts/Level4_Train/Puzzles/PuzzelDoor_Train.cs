@@ -7,7 +7,7 @@ public class PuzzelDoor_Train : MonoBehaviour
     [SerializeField] private List<bool> button = new List<bool>();
     [SerializeField] private List<bool> lockSwitch = new List<bool>();
     public bool dooropen;
-    static Animator anim;
+    public Animator anim;
     public int amount;
     private PuzzleCalculater puzzleCal;
 
