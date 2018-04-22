@@ -70,22 +70,28 @@ public class L2_ConversationManager : MonoBehaviour
         choice1.GetComponentInChildren<Text>().text = answers[2];
         choice2.GetComponentInChildren<Text>().text = answers[3];
 
-        choice1.onClick.AddListener(No);
-        choice2.onClick.AddListener(Yes);
+        choice1.onClick.AddListener(Yes);
+        choice2.onClick.AddListener(No);
     }
 
     public void Yes()
     {
         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 2;
-        Debug.Log("dubble");
-        FinalSentence();
+        if (GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax == 2)
+        {
+            FinalSentence();
+            Debug.Log("dubble");
+        }      
     }
 
     public void No()
     {
         GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax = 1;
-        Debug.Log("singel");
-        FinalSentence();
+        if(GameObject.FindWithTag("Player").GetComponent<Player_Movement>().jumpMax == 1)
+        {
+            FinalSentence();
+            Debug.Log("singel");
+        }
     }
     
     public void FinalSentence()

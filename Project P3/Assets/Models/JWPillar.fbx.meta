@@ -1,29 +1,46 @@
 fileFormatVersion: 2
 guid: b299469fd95d4a54fbb88a04c36a0738
-timeCreated: 1524390393
+timeCreated: 1524424380
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Pillar
-    100004: PillarButton
+    100004: PillarButtonBase
     100006: PillarTopBase
     400000: //RootNode
     400002: Pillar
-    400004: PillarButton
+    400004: PillarButtonBase
     400006: PillarTopBase
-    2100000: No Name
+    2100000: PillarTopBase
+    2100002: Pillar
+    2100004: PillarButtonBase
     2300000: Pillar
-    2300002: PillarButton
+    2300002: PillarButtonBase
     2300004: PillarTopBase
     3300000: Pillar
-    3300002: PillarButton
+    3300002: PillarButtonBase
     3300004: PillarTopBase
-    4300000: Pillar
-    4300002: PillarTopBase
-    4300004: PillarButton
-  externalObjects: {}
+    4300000: PillarTopBase
+    4300002: Pillar
+    4300004: PillarButtonBase
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillar
+    second: {fileID: 2100000, guid: ce22d37e94bb9ef44b93b4c2cbcee092, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PillarButtonBase
+    second: {fileID: 2100000, guid: d77325abea9d56a4fa2ba90a4be0604c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PillarTopBase
+    second: {fileID: 2100000, guid: a9d65f54dc83b0d4da5b818f7a89d494, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

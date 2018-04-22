@@ -34,10 +34,6 @@ public class L2_manager : MonoBehaviour
 
     public void Restart()
     {
-        if (restartButtonSwitch == true)
-        {
-            SceneManager.LoadScene("Jorrit");
-        }
+     SceneManager.LoadScene("Jorrit");
     }
-
 }
