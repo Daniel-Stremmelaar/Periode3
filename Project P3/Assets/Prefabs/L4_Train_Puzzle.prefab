@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33778644831908178}
   - component: {fileID: 23941803948469342}
   m_Layer: 0
-  m_Name: Train_Puzzle
+  m_Name: L4_Train_Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

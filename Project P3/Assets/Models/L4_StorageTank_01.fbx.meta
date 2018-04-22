@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 291b258074d9d2a4980027ef757be9ab
-timeCreated: 1519114984
+guid: 2d0bc3dd397b0b247ba2ddfb54218c9e
+timeCreated: 1524409658
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: StorageTank_01
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube.004
+    4300000: StorageTank_00.007
   externalObjects: {}
   materials:
     importMaterials: 1
