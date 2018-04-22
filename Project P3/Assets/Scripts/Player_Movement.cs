@@ -17,9 +17,6 @@ public class Player_Movement : MonoBehaviour {
     private Vector3 v;
     private Vector3 r;
 
-    [Header("Other")]
-    public int hp;
-
     // Use this for initialization
     void Start()
     {
@@ -31,7 +28,6 @@ public class Player_Movement : MonoBehaviour {
     {
         Look();
         Jump();
-        Lose();
     }
 
     private void FixedUpdate()
@@ -78,14 +74,5 @@ public class Player_Movement : MonoBehaviour {
     {
         r.y = Input.GetAxis("Mouse X");
         transform.Rotate(r * rotSpeed * Time.deltaTime);
-    }
-
-    private void Lose()
-    {
-        if(hp <= 0)
-        {
-            Time.timeScale = 0;
-            print("You lose");
-        }
     }
 }
