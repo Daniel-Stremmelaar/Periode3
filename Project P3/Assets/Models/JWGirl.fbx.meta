@@ -708,7 +708,12 @@ ModelImporter:
     7400000: rig|rigAction
     9500000: //RootNode
     13700000: Body
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 2a12ce32089770a47a5291374792a62a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
