@@ -30,6 +30,6 @@ public class Shot_Movement : MonoBehaviour {
 
     public void DoDamage(int dmg, GameObject target)
     {
-        target.GetComponent<Player_Movement>().hp -= dmg;
+        target.GetComponent<WinCondition>().hp -= dmg;
     }
 }

@@ -7,6 +7,7 @@ public class WinCondition : MonoBehaviour {
     public GameObject player;
     public GameObject key;
     public bool getKey;
+    public int hp;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,8 @@ public class WinCondition : MonoBehaviour {
 	void Update () {
         CheckCardPickup();
         CheckWin();
-	}
+        Lose();
+    }
 
     public void CheckCardPickup()
     {
@@ -37,6 +39,15 @@ public class WinCondition : MonoBehaviour {
                 Time.timeScale = 0;
                 print("You win");
             }
+        }
+    }
+
+    private void Lose()
+    {
+        if (hp <= 0)
+        {
+            Time.timeScale = 0;
+            print("You lose");
         }
     }
 }
