@@ -6,18 +6,51 @@ using UnityEngine.AI;
 public class Enemy_Simple : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private int numberPoint;
+    private int numberPoint;
+    private RaycastHit attack;
+    private float attakcRate;
+    private Transform player;
+    private float currentTime;
     [SerializeField] List<Transform> wayPoints = new List<Transform>();
+    [SerializeField] private Transform raycastPos;
+    [SerializeField] private float attackRateMain;
+    [SerializeField] private float damage;
+    [SerializeField] private float time;
+
+    [HideInInspector] public bool chasing;
+    [HideInInspector] public bool isDead;
+    [HideInInspector] public bool senseField;
+    [HideInInspector] public bool chasing1;
 
     void Start()
     {
+        attakcRate = attackRateMain;
+        currentTime = time;
         numberPoint = 0;
         agent = gameObject.GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
+        isAttack();
         agent.SetDestination(wayPoints[numberPoint].position);
+    }
+
+    void ThinkTimer()
+    {
+        if (chasing1 && !senseField && !isDead)
+        {
+            currentTime -= Time.deltaTime;
+            agent.SetDestination(player.position);
+        }
+
+        if (currentTime <= 0)
+        {
+            chasing = false;
+            currentTime = time;
+            agent.SetDestination(wayPoints[numberPoint].position);
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -32,6 +65,32 @@ public class Enemy_Simple : MonoBehaviour
             {
                 numberPoint = 0;
             }
+        }
+    }
+
+    void isAttack()
+    {
+        if (Physics.Raycast(raycastPos.position, raycastPos.forward, out attack, 3f))
+        {
+            if (attack.transform.tag == "Player")
+            {
+                attakcRate -= Time.deltaTime;
+            }
+        }
+        Debug.DrawRay(raycastPos.position, raycastPos.forward * 3, Color.yellow);
+
+        if (attakcRate <= 0)
+        {
+            attack.transform.GetComponent<Train_Health_Manager>().HurtPlayer(damage);
+            attakcRate = attackRateMain;
+        }
+    }
+
+    public void isChasing()
+    {
+        if (chasing)
+        {
+            agent.SetDestination(player.position);
         }
     }
 }

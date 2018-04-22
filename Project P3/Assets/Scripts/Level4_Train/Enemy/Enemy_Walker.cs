@@ -8,7 +8,6 @@ public class Enemy_Walker : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
     private float currentTime;
-    [HideInInspector] public bool isDead;
     [HideInInspector] public bool senseField;
     [HideInInspector] public bool chasing;
     private bool attackTimer;
@@ -43,7 +42,7 @@ public class Enemy_Walker : MonoBehaviour
 
     void ThinkTimer()
     {
-        if (chasing && !senseField && !isDead)
+        if (chasing && !senseField)
         {
             currentTime -= Time.deltaTime;
             agent.SetDestination(player.position);
@@ -60,13 +59,10 @@ public class Enemy_Walker : MonoBehaviour
     {
         if (Physics.Raycast(raycastPos.position, raycastPos.forward, out look, 10f))
         {
-            if (!isDead)
+            if (look.transform.tag == "Player")
             {
-                if (look.transform.tag == "Player")
-                {
-                    chasing = true;
-                    isChasing();
-                }
+                chasing = true;
+                isChasing();
             }
         }
         Debug.DrawRay(raycastPos.position, raycastPos.forward * 10, Color.red);

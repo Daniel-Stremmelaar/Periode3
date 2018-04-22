@@ -11,9 +11,15 @@ public class Puzzle_2Box : MonoBehaviour
     [SerializeField] private List<bool> press = new List<bool>();
     private bool locked;
 
+    private AudioSource audioSourse;
+    [SerializeField] private AudioClip doorslide;
+    [SerializeField] private float volumeScale;
+
 
     void Start ()
     {
+        volumeScale = 1f;
+        audioSourse = GetComponent<AudioSource>();
         anim =  GetComponent<Animator>();
         locked = false;
 	}
@@ -45,6 +51,8 @@ public class Puzzle_2Box : MonoBehaviour
             if (!locked)
             {
                 anim.SetBool("DoorOpen", true);
+                audioSourse.PlayOneShot(doorslide, volumeScale);
+                audioSourse.pitch = 1.5f;
             }
         }
     }
@@ -55,6 +63,8 @@ public class Puzzle_2Box : MonoBehaviour
         {
             anim.SetBool("DoorOpen", false);
             locked = true;
+            audioSourse.PlayOneShot(doorslide, volumeScale);
+            audioSourse.pitch = 1f;
         }
     }
 }

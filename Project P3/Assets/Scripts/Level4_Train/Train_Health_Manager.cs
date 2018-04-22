@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -9,7 +10,9 @@ public class Train_Health_Manager : MonoBehaviour
     [SerializeField] private float maxHealth;
     public Slider healthSlider;
 
-	void Start ()
+    [SerializeField] private string loadLevel;
+
+    void Start ()
     {
         currentHealth = maxHealth;
         healthSlider.value = CalculateHealth();
@@ -19,7 +22,7 @@ public class Train_Health_Manager : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            print("Dead");
+            SceneManager.LoadScene(loadLevel);
         }
 	}
 

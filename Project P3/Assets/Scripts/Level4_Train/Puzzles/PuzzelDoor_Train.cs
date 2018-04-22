@@ -7,7 +7,7 @@ public class PuzzelDoor_Train : MonoBehaviour
     [SerializeField] private List<bool> button = new List<bool>();
     [SerializeField] private List<bool> lockSwitch = new List<bool>();
     public bool dooropen;
-    public Animator anim;
+    [HideInInspector] public Animator anim;
     public int amount;
     private PuzzleCalculater puzzleCal;
 
@@ -16,8 +16,14 @@ public class PuzzelDoor_Train : MonoBehaviour
 
     [SerializeField] private List<GameObject> lightB = new List<GameObject>();
 
+    private AudioSource audioSourse;
+    [SerializeField] private AudioClip doorslide;
+    [SerializeField] private float volumeScale;
+
     void Start()
     {
+        audioSourse = GetComponent<AudioSource>();
+        volumeScale = 1f;
         bool newBoolb = new bool();
         for (int l = 0; l < lightB.Count; l++)
         {
@@ -75,6 +81,8 @@ public class PuzzelDoor_Train : MonoBehaviour
         if (dooropen)
         {
             anim.SetBool("DoorOpen", true);
+            audioSourse.PlayOneShot(doorslide, volumeScale);
+            audioSourse.pitch = 1.5f;
         }
     }
     void OnTriggerExit(Collider other)
@@ -84,6 +92,8 @@ public class PuzzelDoor_Train : MonoBehaviour
             dooropen = false;
             puzzleCal.Puzzel(button, lockSwitch, lightB, non, green);
             anim.SetBool("DoorOpen", false);
+            audioSourse.PlayOneShot(doorslide, volumeScale);
+            audioSourse.pitch = 1f;
         }
     }
 }

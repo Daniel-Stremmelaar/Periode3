@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 33992989082917028}
   - component: {fileID: 23327731612651852}
   - component: {fileID: 114849009097693380}
+  - component: {fileID: 64754704517887810}
   m_Layer: 0
   m_Name: Button_01
   m_TagString: Untagged
@@ -192,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062917597892728}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 2.113, y: 1.6914177, z: 1.1529558}
+  m_LocalPosition: {x: 2.158, y: 1.6352875, z: 1.216999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4371292070888474}
@@ -517,6 +518,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685857906831072}
   m_Mesh: {fileID: 4300008, guid: 0d15ad53f17dafc43bbee222167884be, type: 3}
+--- !u!64 &64754704517887810
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1685857906831072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: 0d15ad53f17dafc43bbee222167884be, type: 3}
 --- !u!114 &114229210898987214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -529,6 +544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 2
+  button: {fileID: 8300000, guid: fde9649ed07e82741be59ea8dad68714, type: 3}
+  volumeScale: 0
 --- !u!114 &114771032158803508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -541,6 +558,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 1
+  button: {fileID: 8300000, guid: fde9649ed07e82741be59ea8dad68714, type: 3}
+  volumeScale: 0
 --- !u!114 &114849009097693380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,3 +572,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   number: 3
+  button: {fileID: 8300000, guid: fde9649ed07e82741be59ea8dad68714, type: 3}
+  volumeScale: 0
