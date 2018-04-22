@@ -70,8 +70,8 @@ public class L2_ConversationManager : MonoBehaviour
         choice1.GetComponentInChildren<Text>().text = answers[2];
         choice2.GetComponentInChildren<Text>().text = answers[3];
 
-        choice1.onClick.AddListener(No);
-        choice2.onClick.AddListener(Yes);
+        choice1.onClick.AddListener(Yes);
+        choice2.onClick.AddListener(No);
     }
 
     public void Yes()
