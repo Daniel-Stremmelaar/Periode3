@@ -17,10 +17,8 @@ public class Enemy_Simple : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float time;
 
-    [HideInInspector] public bool chasing;
-    [HideInInspector] public bool isDead;
     [HideInInspector] public bool senseField;
-    [HideInInspector] public bool chasing1;
+    public bool chasing1;
 
     void Start()
     {
@@ -39,7 +37,7 @@ public class Enemy_Simple : MonoBehaviour
 
     void ThinkTimer()
     {
-        if (chasing1 && !senseField && !isDead)
+        if (chasing1 && !senseField)
         {
             currentTime -= Time.deltaTime;
             agent.SetDestination(player.position);
@@ -47,7 +45,7 @@ public class Enemy_Simple : MonoBehaviour
 
         if (currentTime <= 0)
         {
-            chasing = false;
+            chasing1 = false;
             currentTime = time;
             agent.SetDestination(wayPoints[numberPoint].position);
         }
@@ -88,7 +86,7 @@ public class Enemy_Simple : MonoBehaviour
 
     public void isChasing()
     {
-        if (chasing)
+        if (chasing1)
         {
             agent.SetDestination(player.position);
         }

@@ -19,7 +19,7 @@ public class Sensfield : MonoBehaviour
             }
             else
             {
-                enemy.GetComponent<Enemy_Simple>().chasing = true;
+                enemy.GetComponent<Enemy_Simple>().chasing1 = true;
                 enemy.GetComponent<Enemy_Simple>().senseField = true;
                 enemy.GetComponent<Enemy_Simple>().isChasing();
             }
