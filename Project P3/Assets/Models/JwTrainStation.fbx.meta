@@ -1,17 +1,22 @@
 fileFormatVersion: 2
 guid: c3f4a459393877743bd06b862d0312fd
-timeCreated: 1524390393
+timeCreated: 1524424381
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: Station
     2300000: //RootNode
     3300000: //RootNode
     4300000: TrainStation
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Station
+    second: {fileID: 2100000, guid: 311bbdf556a59b545b6e45136dc1fd86, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
