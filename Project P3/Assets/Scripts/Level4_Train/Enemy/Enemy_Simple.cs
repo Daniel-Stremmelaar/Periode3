@@ -17,7 +17,7 @@ public class Enemy_Simple : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float time;
 
-    [HideInInspector] public bool senseField;
+    public bool senseField;
     public bool chasing1;
 
     void Start()
@@ -31,6 +31,7 @@ public class Enemy_Simple : MonoBehaviour
 
     void Update()
     {
+        ThinkTimer();
         isAttack();
         agent.SetDestination(wayPoints[numberPoint].position);
     }
