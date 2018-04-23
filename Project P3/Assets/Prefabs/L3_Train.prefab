@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33530574579204858}
   - component: {fileID: 23532030049959434}
   m_Layer: 0
-  m_Name: JWTrain (2)
+  m_Name: L3_Train
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4751322503189390}
   m_Layer: 0
-  m_Name: JWTrain
+  m_Name: L3_Train
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
