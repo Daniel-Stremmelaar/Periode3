@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Frank.unity
     guid: 2f4d65a1e234489408c595b368129fc6
+  - enabled: 1
+    path: Assets/Scenes/Daniel.unity
+    guid: 448fe52e667ca734b98de130287e1890

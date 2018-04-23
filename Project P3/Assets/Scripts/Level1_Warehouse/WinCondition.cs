@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class WinCondition : MonoBehaviour {
 
     public GameObject player;
     public GameObject key;
+    [SerializeField] private string loadLevel;
     public bool getKey;
     public int hp;
 
@@ -37,7 +39,7 @@ public class WinCondition : MonoBehaviour {
             if(player.transform.position.x > 28 && player.transform.position.z < 4 && player.transform.position.z > 1)
             {
                 Time.timeScale = 0;
-                print("You win");
+                SceneManager.LoadScene(loadLevel);
             }
         }
     }
