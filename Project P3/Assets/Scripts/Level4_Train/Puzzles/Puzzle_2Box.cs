@@ -5,11 +5,16 @@ using UnityEngine.AI;
 
 public class Puzzle_2Box : MonoBehaviour
 {
-    [SerializeField] private List<Transform> pressure = new List<Transform>();
     static Animator anim;
-    int number;
-    [SerializeField] private List<bool> press = new List<bool>();
     private bool locked;
+    private int number;
+    private bool allOn;
+    [SerializeField] private List<Transform> pressure = new List<Transform>();
+    [SerializeField] private List<GameObject> lightS = new List<GameObject>();
+    [SerializeField] private List<bool> press = new List<bool>();
+
+    [SerializeField] Material non;
+    [SerializeField] Material green;
 
     private AudioSource audioSourse;
     [SerializeField] private AudioClip doorslide;
@@ -22,7 +27,9 @@ public class Puzzle_2Box : MonoBehaviour
         audioSourse = GetComponent<AudioSource>();
         anim =  GetComponent<Animator>();
         locked = false;
-	}
+        allOn = false;
+        lightS[0].GetComponent<MeshRenderer>().material = non;
+    }
 
 	void Update ()
     {
@@ -50,6 +57,18 @@ public class Puzzle_2Box : MonoBehaviour
         {
             if (!locked)
             {
+                allOn = true;
+                lightS[0].GetComponent<MeshRenderer>().material = green;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Player")
+        {
+            if (!locked && allOn)
+            {
                 anim.SetBool("DoorOpen", true);
                 audioSourse.PlayOneShot(doorslide, volumeScale);
                 audioSourse.pitch = 1.5f;
@@ -61,10 +80,14 @@ public class Puzzle_2Box : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
-            anim.SetBool("DoorOpen", false);
-            locked = true;
-            audioSourse.PlayOneShot(doorslide, volumeScale);
-            audioSourse.pitch = 1f;
+            if (locked)
+            {
+                audioSourse.PlayOneShot(doorslide, volumeScale);
+                audioSourse.pitch = 1f;
+                anim.SetBool("DoorOpen", false);
+                locked = true;
+                allOn = false;
+            }
         }
     }
 }

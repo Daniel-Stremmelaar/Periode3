@@ -25,6 +25,11 @@ public class InTrain_PlayerInteract : MonoBehaviour
         noPower = false;
         currentStamina = maxStamina;
         staminaSlider.value = CalculaterWeight();
+        Cursor.visible = false;
+        if (Cursor.lockState != CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void Update()

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class DoorOpenClose : MonoBehaviour
 {
-    [HideInInspector]public Animator anim;
+    [HideInInspector] public Animator anim;
     private AudioSource audioSourse;
     [SerializeField] private AudioClip doorslide;
     [SerializeField] private float volumeScale;
