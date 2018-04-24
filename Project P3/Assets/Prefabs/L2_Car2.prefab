@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1554955131744138}
+  m_RootGameObject: {fileID: 1318239800076382}
   m_IsPrefabParent: 1
---- !u!1 &1554955131744138
+--- !u!1 &1318239800076382
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4878851898469346}
-  - component: {fileID: 33924568294941976}
-  - component: {fileID: 23542845101120152}
-  - component: {fileID: 114580741909317480}
-  - component: {fileID: 64240129964185512}
-  - component: {fileID: 82057643585620964}
+  - component: {fileID: 4307200563116560}
+  - component: {fileID: 33103525217957226}
+  - component: {fileID: 23678042212205204}
+  - component: {fileID: 114109376790281902}
+  - component: {fileID: 64045673856540794}
+  - component: {fileID: 82049243732716330}
   m_Layer: 0
-  m_Name: L2_Car_2
+  m_Name: L2_Car2
   m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4878851898469346
+--- !u!4 &4307200563116560
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.335005, y: 23.82761, z: -11.1837845}
+  m_LocalPosition: {x: -22.793257, y: 123.05325, z: -57.568165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23542845101120152
+--- !u!23 &23678042212205204
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,19 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33924568294941976
+--- !u!33 &33103525217957226
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_Mesh: {fileID: 4300000, guid: 4c527ca90feeb034d8cf63894e385032, type: 3}
---- !u!64 &64240129964185512
+--- !u!64 &64045673856540794
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -99,12 +99,12 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 4c527ca90feeb034d8cf63894e385032, type: 3}
---- !u!82 &82057643585620964
+--- !u!82 &82049243732716330
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243045498417836552, guid: f93819c9b94af3441a209e17c7f02a50,
@@ -161,7 +161,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.49365234
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -180,12 +180,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114580741909317480
+--- !u!114 &114109376790281902
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554955131744138}
+  m_GameObject: {fileID: 1318239800076382}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f794175186a1cb40951438daf1b54b5, type: 3}
