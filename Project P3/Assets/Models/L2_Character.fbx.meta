@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: cff78f4d207938541b83ebb3618de2df
-timeCreated: 1524408132
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -713,6 +711,7 @@ ModelImporter:
     7400000: metarig|metarigAction
     9500000: //RootNode
     13700000: Body
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -732,6 +731,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
